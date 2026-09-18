@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.4.0-win-x64.zip"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveLite1--0.4.0--win--x64.zip-FF7A1A?style=for-the-badge" /></a>
+  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.4.1-win-x64.zip"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveLite1--0.4.1--win--x64.zip-FF7A1A?style=for-the-badge" /></a>
 </p>
 
 <p align="center">
-  <img alt="version" src="https://img.shields.io/badge/version-0.4.0-FF7A1A" />
+  <img alt="version" src="https://img.shields.io/badge/version-0.4.1-FF7A1A" />
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-2D2D2D" />
   <img alt="runtime" src="https://img.shields.io/badge/.NET%20Framework-4.8-512BD4" />
   <img alt="ui" src="https://img.shields.io/badge/UI-WPF%20%2B%20MaterialDesignInXaml%205.3.2-2D2D2D" />
@@ -70,6 +70,7 @@
 - **Survives closing** — partial downloads survive closing the app, a crash or a reboot and continue on the next start.
 - **Duplicate protection** — a link already in the list, or a video already in the download folder, is ignored with a short message.
 - **YouTube bot-check handling** — uses YouTube's embedded player so downloads keep working when YouTube asks "Sign in to confirm you're not a bot"; automatic fallbacks and timed retries.
+- **Help when a download fails** — click the red status icon of a failed download for **How to fix this**: what went wrong and numbered steps for exactly that error, with **Retry** and **Copy details**. Posts that need a signed-in account get a guided `cookies.txt` set-up (exporter links, file check and format fix, per-site coverage).
 - **Self-maintaining** — downloads `yt-dlp`, `ffmpeg` and `deno` on the first start and keeps them up to date silently (running downloads are paused and resumed around an update).
 - **Close to tray** — the window's close button keeps the app running in the notification area (Restore / Exit menu).
 - **Portable and small** — no installer, no registry, no admin rights; the app is 10 MB (3 MB zipped) and keeps all its state in its own folder.
@@ -83,6 +84,8 @@
 | ![Main window](docs/screenshots/readme-main.png) | ![Context menu](docs/screenshots/readme-menu.png) |
 | **Settings** | **About** |
 | ![Settings](docs/screenshots/readme-settings.png) | ![About](docs/screenshots/readme-about.png) |
+| **How to fix this — opened from a failed download** | **Sign-in cookies set up** |
+| ![How to fix this](docs/screenshots/tutorial-fix-help.png) | ![Cookies set up](docs/screenshots/tutorial-fix-cookies.png) |
 | **First start: tools download with speed and ETA** | **Tray menu** |
 | ![First start](docs/screenshots/phase8-tools-download.png) | ![Tray menu](docs/screenshots/phase9-tray-menu.png) |
 
@@ -98,7 +101,7 @@
 
 ## Download & install
 
-1. Download **[`SwiftSaveLite1-0.4.0-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.4.0-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
+1. Download **[`SwiftSaveLite1-0.4.1-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.4.1-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
 2. Unzip it into a folder you can write to, e.g. `D:\Apps\SwiftSaveLite1` (not `C:\Program Files`).
 3. Run **`SwiftSaveLite1.exe`**.
 
@@ -176,6 +179,12 @@ Each row shows a status icon, the title, a detail line, the size, a thumbnail wi
 | *No video in this post* | The post has no video (text or photos only) |
 | *File missing* | The finished file was moved or deleted outside the app |
 
+**Something went wrong? Click the status icon.** The red icon of a failed download, or the orange hourglass of a download waiting for an automatic retry, opens **How to fix this**: what happened, numbered steps to fix it for exactly this error (sign-in required, age-restricted, bot check, region block, video unavailable, no video in the post, network, stalled, folder, conversion, missing tools, …), **Retry** and **Copy details** (link, error and tool versions to send to the author). For sign-in problems the window also sets up `cookies.txt` — see [cookies](#sign-in-bot-checks-age-limits-and-cookies).
+
+| A failed download and a retry wait | Click the red icon → How to fix this |
+|---|---|
+| ![Failed download in the list](docs/screenshots/tutorial-fix-list.png) | ![How to fix this](docs/screenshots/tutorial-fix-help.png) |
+
 The list is saved to `downloads.xml` and restored on the next start with every item's last status; interrupted downloads continue. With **Delete automatically from download list** on (default) only the **5** most recent finished downloads stay in the list — their files stay on disk.
 
 ### Mouse, keyboard and menus
@@ -228,6 +237,7 @@ Click **⚙** at the right end of the status bar.
 | Close to system tray | **On** | The window's **×** hides the app to the tray instead of exiting |
 | Delete automatically from download list | **On**, keep **5** | Keep only the N most recent finished downloads in the list (0–9999); files are never deleted |
 | Simultaneous downloads | **1** | How many downloads the queue runs at the same time (1–5); applies immediately, also to running downloads |
+| Sign-in cookies | not set | Shows which sites `cookies.txt` has cookies for; **Set up…** opens the step-by-step guide with **Choose cookies file…** |
 
 Changes are saved immediately to `settings.xml`.
 
@@ -280,7 +290,14 @@ YouTube sometimes answers a network with **"Sign in to confirm you're not a bot"
 
 For lasting blocks, **age-restricted** or **members-only** videos, let yt-dlp use the cookies of a signed-in browser:
 
-- **cookies.txt** — export your cookies (YouTube, Instagram, Facebook, …) in Netscape format with a browser extension and save the file as `cookies.txt` next to `SwiftSaveLite1.exe`. It is picked up automatically.
+- **cookies.txt (recommended)** — the easiest way is the app itself: click the red status icon of the failed download (or **⚙ Settings → Sign-in cookies → Set up…**). The window walks you through it:
+  1. Sign in to the site (instagram.com, facebook.com, youtube.com, …) in Chrome, Edge or Firefox.
+  2. Install a cookies exporter: [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) for Chrome / Edge or [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/) for Firefox (the extensions yt-dlp recommends; avoid the look-alike "Get cookies.txt" without "LOCALLY", it was malware).
+  3. On the site, click the extension's icon and export the cookies (Netscape format) — the file lands in your Downloads folder.
+  4. **Choose cookies file…** — the app checks the file, adds the `# Netscape HTTP Cookie File` header if it is missing, converts the line ends to CRLF (yt-dlp answers LF files with HTTP 400) and saves it as `cookies.txt` next to `SwiftSaveLite1.exe`. The window then shows which sites the file covers.
+  5. **Retry** — the failed downloads of that site start again.
+
+  You can also copy the exported file next to the exe yourself and rename it to `cookies.txt`. It is used for every download from then on. Cookies expire; when the sign-in message comes back, export a new file.
 - **Browser cookies** — or set `<CookiesFromBrowser>firefox</CookiesFromBrowser>` in `settings.xml` (see below). `edge`, `chrome`, `brave`, `opera` and others work too; Chromium-based browsers may need to be closed first.
 
 > Treat `cookies.txt` like a password — it gives access to your accounts. Never share it.
@@ -362,13 +379,13 @@ Check the internet connection and any proxy or firewall that might block `github
 <details>
 <summary><b>A video fails with "YouTube bot check" or "rate limit (HTTP 429)"</b></summary>
 
-The app retries on its own (countdown in the list). Downloading a lot in a short time makes YouTube throttle your network, so waiting helps. For a lasting block put a `cookies.txt` next to the exe (see [cookies](#youtube-bot-checks-age-limits-and-cookies)).
+The app retries on its own (countdown in the list). Downloading a lot in a short time makes YouTube throttle your network, so waiting helps. For a lasting block put a `cookies.txt` next to the exe (see [cookies](#sign-in-bot-checks-age-limits-and-cookies)).
 </details>
 
 <details>
 <summary><b>"Instagram requires sign-in for this post" / "TikTok blocks this post for your network or region"</b></summary>
 
-Put a `cookies.txt` exported from a browser where you are signed in to that site next to the exe (see [cookies](#sign-in-bot-checks-age-limits-and-cookies)) and use **Retry**. Region blocks can only be avoided from another network.
+Click the red status icon of the download: the **How to fix this** window explains the steps and sets up `cookies.txt` from a browser where you are signed in to that site (see [cookies](#sign-in-bot-checks-age-limits-and-cookies)); then click **Retry**. Region blocks can only be avoided from another network.
 </details>
 
 <details>
@@ -429,6 +446,7 @@ The exe is not code-signed and `yt-dlp.exe` is sometimes flagged generically. Al
 
 | Version | Highlights |
 |---|---|
+| **0.4.1** | Click the status icon of a failed (or retry-waiting) download for **How to fix this** — detailed steps per error, Retry, Copy details; guided **cookies.txt** set-up with exporter links, file check and format fix (**Choose cookies file…**) and per-site coverage; ⚙ Settings → Sign-in cookies; TikTok region blocks reported separately from sign-in |
 | **0.4.0** | **Facebook, TikTok, X (Twitter) and Instagram** links — paste, link box and Smart Download; share links (`fb.watch`, `vm.tiktok.com`, `t.co`, …) expanded before queueing; best version up to 1080p on every site; site badge and thumbnails from the posts; per-site error messages (sign-in, region block, no video) and per-site rate-limit waits; MP3 and MP4 of the same video can download at the same time |
 | **0.3.0** | (not released separately — included in 0.4.0) Video / audio toggle in the status bar (MP4 or **MP3 320 kbps** with tags and cover); **Simultaneous downloads** setting (1–5, applied live); Smart Download fix: a link copied before the start or while the tools download on the first start is now queued, and copying the same link again works; About: click the app icon to open the app folder |
 | **0.2.1** | Close to system tray (default on) with a **Restore** / **Exit** tray menu; tray tooltip with queue counts; a second start restores the hidden window |
