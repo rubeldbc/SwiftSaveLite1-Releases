@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.4.1-win-x64.zip"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveLite1--0.4.1--win--x64.zip-FF7A1A?style=for-the-badge" /></a>
+  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.5.0-win-x64.zip"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveLite1--0.5.0--win--x64.zip-FF7A1A?style=for-the-badge" /></a>
 </p>
 
 <p align="center">
-  <img alt="version" src="https://img.shields.io/badge/version-0.4.1-FF7A1A" />
+  <img alt="version" src="https://img.shields.io/badge/version-0.5.0-FF7A1A" />
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-2D2D2D" />
   <img alt="runtime" src="https://img.shields.io/badge/.NET%20Framework-4.8-512BD4" />
   <img alt="ui" src="https://img.shields.io/badge/UI-WPF%20%2B%20MaterialDesignInXaml%205.3.2-2D2D2D" />
@@ -63,17 +63,19 @@
 - **Smart Download** — on by default: every supported link you copy anywhere in Windows (browser, chat, e-mail) is queued automatically.
 - **Full HD first** — on every site the best version up to 1920×1080 is taken (vertical videos: up to 1080×1920).
 - **MP4 video or MP3 audio** — one click on the status-bar icon switches new links between video (MP4 up to **1920×1080**, H.264 + AAC, plays everywhere; VP9 / AV1 / WebM sources are converted) and audio only (**MP3 320 kbps** with title, artist and cover art).
-- **Playlists** — paste a playlist link and its videos (up to 500) are queued.
+- **Playlists** — paste or copy a playlist link, or the link of any video playing inside a playlist, and its videos (up to 500) are queued. Copy it again later and only what is missing is added: videos already queued, finished or in the download folder are skipped.
 - **Rich list** — the original title right away, a thumbnail with the video length, size, progress bar, percent, speed and ETA.
 - **A queue that behaves** — one download at a time by default, or up to 5 at once (Settings, applies immediately); start any video right away; pause, resume, retry, cancel; pause all / resume all.
 - **Multi-select** — <kbd>Shift</kbd> / <kbd>Ctrl</kbd> + click, then remove, delete files, copy links, retry, pause or resume the whole selection.
-- **Survives closing** — partial downloads survive closing the app, a crash or a reboot and continue on the next start.
+- **Survives closing** — partial downloads survive closing the app, a crash or a reboot; they are kept as Paused and continue on the next start.
 - **Duplicate protection** — a link already in the list, or a video already in the download folder, is ignored with a short message.
 - **YouTube bot-check handling** — uses YouTube's embedded player so downloads keep working when YouTube asks "Sign in to confirm you're not a bot"; automatic fallbacks and timed retries.
 - **Help when a download fails** — click the red status icon of a failed download for **How to fix this**: what went wrong and numbered steps for exactly that error, with **Retry** and **Copy details**. Posts that need a signed-in account get a guided `cookies.txt` set-up (exporter links, file check and format fix, per-site coverage).
 - **Self-maintaining** — downloads `yt-dlp`, `ffmpeg` and `deno` on the first start and keeps them up to date silently (running downloads are paused and resumed around an update).
 - **Close to tray** — the window's close button keeps the app running in the notification area (Restore / Exit menu).
-- **Portable and small** — no installer, no registry, no admin rights; the app is 10 MB (3 MB zipped) and keeps all its state in its own folder.
+- **Starts with Windows** — quietly in the tray when you sign in (Settings, on by default).
+- **Picks up where it left off** — a download cut off by closing the app is kept as Paused; queued and paused downloads continue at the next start (Settings, on by default).
+- **Portable and small** — no installer, no admin rights; the app is 10 MB (3 MB zipped) and keeps all its state in its own folder. The only thing outside it is the optional per-user *Start with Windows* entry.
 - **Compact dark UI** — grey and orange, square corners everywhere, Material Design icons.
 - **Safe file names** — characters Windows does not allow in file names are replaced automatically; titles in any language are kept.
 
@@ -101,7 +103,7 @@
 
 ## Download & install
 
-1. Download **[`SwiftSaveLite1-0.4.1-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.4.1-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
+1. Download **[`SwiftSaveLite1-0.5.0-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.5.0-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
 2. Unzip it into a folder you can write to, e.g. `D:\Apps\SwiftSaveLite1` (not `C:\Program Files`).
 3. Run **`SwiftSaveLite1.exe`**.
 
@@ -109,7 +111,7 @@
 
 **Update:** exit the app, replace the exe and the dlls with the new version, keep `settings.xml`, `downloads.xml` and `tools\`.
 
-**Uninstall:** exit the app (tray icon → **Exit**) and delete its folder. Your videos in the download folder are not touched.
+**Uninstall:** untick **⚙ Settings → Start with Windows** (removes the Windows start-up entry), exit the app (tray icon → **Exit**) and delete its folder. Your videos in the download folder are not touched.
 
 ## Quick start
 
@@ -150,7 +152,7 @@ Several links at once work everywhere: separated by spaces, commas or new lines,
 | YouTube — short links | `https://youtu.be/ID`, `youtu.be/ID?si=…&t=5` |
 | YouTube — Shorts, live, embeds | `/shorts/ID`, `/live/ID`, `/embed/ID`, `/v/ID`, `/e/ID`, `youtube-nocookie.com/embed/ID`, `attribution_link?…` |
 | YouTube — bare video id | `aqz-KE-bpKQ` (11 characters on its own line) |
-| YouTube — playlists | `youtube.com/playlist?list=PL…`, `watch?list=PL…`, `/embed/videoseries?list=PL…` — up to 500 videos are queued; `watch?v=ID&list=PL…` downloads only that video |
+| YouTube — playlists | `youtube.com/playlist?list=PL…`, `watch?list=PL…`, `/embed/videoseries?list=PL…`, and a video inside a playlist: `watch?v=ID&list=PL…`, `youtu.be/ID?list=PL…` — up to 500 videos are queued. A YouTube **Mix** (`list=RD…`) downloads only that video; a list the app cannot read (private, *Watch later* without cookies) downloads only the linked video |
 | **Facebook** | `facebook.com/watch/?v=ID`, `facebook.com/PAGE/videos/ID/`, `facebook.com/reel/ID`, `video.php?v=ID`, `facebook.com/PAGE/posts/ID`, `groups/…/permalink/ID/`, `story.php?story_fbid=…`, share links `fb.watch/CODE/`, `facebook.com/share/v/CODE/`, `/share/r/CODE/` (also `m.`, `web.` and language sub-domains) |
 | **TikTok** | `tiktok.com/@user/video/ID`, `tiktok.com/embed/v2/ID`, share links `vm.tiktok.com/CODE/`, `vt.tiktok.com/CODE/`, `tiktok.com/t/CODE/` |
 | **X / Twitter** | `x.com/user/status/ID`, `twitter.com/user/status/ID`, `mobile.twitter.com/…`, `…/status/ID/video/1`, `fxtwitter.com` / `vxtwitter.com` / `fixupx.com` links, short links `t.co/CODE` |
@@ -159,6 +161,10 @@ Several links at once work everywhere: separated by spaces, commas or new lines,
 Share links (`fb.watch`, `vm.tiktok.com`, `t.co`, `facebook.com/share/…`, `instagram.com/share/…`) are opened first to find the real post, so the same video pasted as a share link and as a normal link is recognised as a duplicate. When a share link cannot be opened (for example a Facebook login page) it is queued as it is and yt-dlp follows it.
 
 A post with several videos (an X post, an Instagram carousel) downloads all of them; the files are numbered `… [id]-1.mp4`, `… [id]-2.mp4`.
+
+**Playlists:** copy the playlist's link — or the link of any video you are watching inside it — and every video of the list is queued in playlist order. Downloaded half a playlist and it grew since? Copy it again: videos already queued, downloading, paused or finished in the list, and videos whose MP4 / MP3 is already in the download folder, are skipped; only the rest is queued.
+
+<p align="center"><img src="docs/screenshots/tutorial-playlist.png" alt="A playlist copied again: 4 videos were already downloaded, the other 15 are queued" width="456" /></p>
 
 Not accepted: profiles and channels (`youtube.com/@name`, `tiktok.com/@user`, `instagram.com/user/`, `x.com/user`), hashtags, sounds, stories, X Spaces, photo-only posts, other sites and look-alike domains (`notyoutube.com`, `notfacebook.com`, `tiktok.com.evil.example`).
 
@@ -185,7 +191,7 @@ Each row shows a status icon, the title, a detail line, the size, a thumbnail wi
 |---|---|
 | ![Failed download in the list](docs/screenshots/tutorial-fix-list.png) | ![How to fix this](docs/screenshots/tutorial-fix-help.png) |
 
-The list is saved to `downloads.xml` and restored on the next start with every item's last status; interrupted downloads continue. With **Delete automatically from download list** on (default) only the **5** most recent finished downloads stay in the list — their files stay on disk.
+The list is saved to `downloads.xml` and restored on the next start with every item's last status; a download interrupted by closing the app is saved as **Paused**, and with **Resume downloads at startup** on (default) queued and paused downloads continue from their partial files. With **Delete automatically from download list** on (default) only the **5** most recent finished downloads stay in the list — their files stay on disk.
 
 ### Mouse, keyboard and menus
 
@@ -235,6 +241,8 @@ Click **⚙** at the right end of the status bar.
 | Smart Download | **On** | Queue YouTube, Facebook, TikTok, X and Instagram links copied anywhere in Windows |
 | Show paste box | Off | Show the link box and **+** button above the list |
 | Close to system tray | **On** | The window's **×** hides the app to the tray instead of exiting |
+| Start with Windows | **On** | Starts hidden in the tray when you sign in to Windows (per-user `Run` entry, no admin rights; the first start of a new copy creates it). Switching the entry off in Windows' *Startup apps* also clears this box |
+| Resume downloads at startup | **On** | At app start every queued and paused download runs again. Off: nothing starts by itself — they wait as Paused until **Resume** / **Resume all** |
 | Delete automatically from download list | **On**, keep **5** | Keep only the N most recent finished downloads in the list (0–9999); files are never deleted |
 | Simultaneous downloads | **1** | How many downloads the queue runs at the same time (1–5); applies immediately, also to running downloads |
 | Sign-in cookies | not set | Shows which sites `cookies.txt` has cookies for; **Set up…** opens the step-by-step guide with **Choose cookies file…** |
@@ -246,8 +254,9 @@ Changes are saved immediately to `settings.xml`.
 With **Close to system tray** on, clicking **×** hides the window. Downloads, Smart Download and tool updates keep running, and a one-time notification tells you so. The tray icon's tooltip shows the queue, e.g. *"SwiftSaveLite1 · 2 queued · 1 active"*.
 
 - **Click** the tray icon, or right-click → **Restore**, to show the window again.
-- Right-click → **Exit** quits the app. Running downloads stop and continue on the next start.
+- Right-click → **Exit** quits the app. Running downloads are saved as Paused and continue on the next start (**Resume downloads at startup**).
 - Starting `SwiftSaveLite1.exe` again also brings the hidden window back.
+- With **Start with Windows** on, the app starts in the tray when you sign in: no window, but Smart Download, the queue and tool updates run. Click the tray icon to open it.
 
 On Windows 11 new tray icons appear under the **^** (show hidden icons) arrow; drag the icon to the taskbar to keep it visible.
 
@@ -266,10 +275,13 @@ On Windows 11 new tray icons appear under the **^** (show hidden icons) arrow; d
 | A video is queued | YouTube: the title comes from YouTube's oEmbed service, the length from yt-dlp metadata and the thumbnail from `i.ytimg.com`. Other sites: title, length and thumbnail come from yt-dlp metadata; the thumbnail shows a small site badge (and the site icon until the image has loaded). |
 | A download finishes | The file is checked with ffmpeg; anything that is not H.264 + AAC in MP4 (or MP3 for audio items) is converted. Older finished items are trimmed from the list (auto-clean). |
 | A duplicate link arrives | It is ignored with a status message for a few seconds: *already in the list* (same video in the same format) or *already downloaded* (an MP4 / MP3 with that video id is in the download folder). |
+| A playlist is copied again | Only its missing videos are queued, in playlist order: videos already queued, downloading, paused or finished in the list, or already in the download folder, are skipped; failed or cancelled ones are queued again. The status bar says *"Queued 12 videos (playlist has 20) · skipped …"* or *"Playlist up to date — …"*. |
 | A site limits your network (bot check, HTTP 429) | Only that site waits — downloads from the other sites keep going. YouTube: an immediate second attempt with more YouTube player clients, then automatic retries after 2 → 5 → 10 → 20 → 30 → 60 minutes (HTTP 403: 30 s → 2 → 5 min), with a countdown in the list. |
 | Network error | Retries after 30 s → 2 min → 5 min. |
 | ≈ 15 s after start, then every 12 h | Checks for newer yt-dlp / ffmpeg / deno (at most every 6 h). A newer tool is downloaded, running downloads are paused, the file is swapped (rolled back on failure) and downloads resume — no dialogs. |
-| The app is closed or crashes mid-download | The partial file is kept; the download continues on the next start. |
+| The app is closed or crashes mid-download | The partial file is kept and the item is saved as Paused; it continues on the next start when **Resume downloads at startup** is on. |
+| Every start | The Windows start-up entry is made to match **Start with Windows** — also after the portable folder was moved. |
+| You sign in to Windows | With **Start with Windows** on the app starts hidden in the tray. |
 | The exe is started again from the same folder | The running window comes to the front (also from the tray). |
 | Windows shuts down or you sign out | The list is saved and the app exits cleanly. |
 
@@ -346,6 +358,8 @@ Usually changed through **⚙ Settings**. To edit it by hand, exit the app first
   <SimultaneousDownloads>1</SimultaneousDownloads>      <!-- 1..5 -->
   <DownloadKind>Video</DownloadKind>                    <!-- Video (MP4) or Audio (MP3) -->
   <SmartClipboardFingerprint>…</SmartClipboardFingerprint> <!-- hash of the links Smart Download last queued; written by the app -->
+  <StartWithWindows>true</StartWithWindows>             <!-- HKCU\…\CurrentVersion\Run entry "SwiftSaveLite1" -->
+  <AutoResumeDownloads>true</AutoResumeDownloads>
 </Settings>
 ```
 
@@ -413,6 +427,18 @@ Smart Download may be off (⚙ Settings). The link may already be in the list, o
 </details>
 
 <details>
+<summary><b>I copied a playlist but only one video was queued</b></summary>
+
+A YouTube **Mix** (`list=RD…`, the endless "Mix – …" lists YouTube makes for you) is not a real playlist, so only the video is downloaded. A private list or *Watch later* cannot be read without sign-in cookies, so only the linked video is queued (the status bar says *"the playlist could not be read, only this video"*). If the status bar says *"Playlist up to date"*, every video of the list is already queued, finished or in the download folder.
+</details>
+
+<details>
+<summary><b>The app starts when I sign in to Windows</b></summary>
+
+That is **⚙ Settings → Start with Windows** (on by default): the app starts hidden in the tray. Untick it to remove the start-up entry. Turning it off in Windows' *Settings → Apps → Startup* also works — the app then unticks its own box.
+</details>
+
+<details>
 <summary><b>I closed the window but the app is still running</b></summary>
 
 That is **Close to system tray**. Use the tray icon → **Exit**, or turn the option off in ⚙ Settings.
@@ -446,6 +472,7 @@ The exe is not code-signed and `yt-dlp.exe` is sometimes flagged generically. Al
 
 | Version | Highlights |
 |---|---|
+| **0.5.0** | **Playlist top-up**: a copied link of a video inside a playlist queues the whole playlist, and copying it again later adds only what is missing (skips videos already queued, finished or in the download folder; YouTube Mix stays one video); **Start with Windows** (default on, hidden in the tray); **Resume downloads at startup** (default on) — a download cut off by closing the app is kept as Paused |
 | **0.4.1** | Click the status icon of a failed (or retry-waiting) download for **How to fix this** — detailed steps per error, Retry, Copy details; guided **cookies.txt** set-up with exporter links, file check and format fix (**Choose cookies file…**) and per-site coverage; ⚙ Settings → Sign-in cookies; TikTok region blocks reported separately from sign-in |
 | **0.4.0** | **Facebook, TikTok, X (Twitter) and Instagram** links — paste, link box and Smart Download; share links (`fb.watch`, `vm.tiktok.com`, `t.co`, …) expanded before queueing; best version up to 1080p on every site; site badge and thumbnails from the posts; per-site error messages (sign-in, region block, no video) and per-site rate-limit waits; MP3 and MP4 of the same video can download at the same time |
 | **0.3.0** | (not released separately — included in 0.4.0) Video / audio toggle in the status bar (MP4 or **MP3 320 kbps** with tags and cover); **Simultaneous downloads** setting (1–5, applied live); Smart Download fix: a link copied before the start or while the tools download on the first start is now queued, and copying the same link again works; About: click the app icon to open the app folder |
