@@ -5,17 +5,18 @@
 <h1 align="center">SwiftSaveLite1</h1>
 
 <p align="center">
-  <b>A compact, portable video downloader for Windows — YouTube, Facebook, TikTok, X (Twitter) and Instagram.</b><br />
+  <b>A compact, portable video and file downloader for Windows — YouTube, Facebook, TikTok, X (Twitter), Instagram and any direct file link.</b><br />
   Copy a link, press <kbd>Ctrl</kbd>+<kbd>V</kbd> and get the best version up to 1080p as <b>MP4 (H.264 / AAC)</b> — or a 320 kbps <b>MP3</b>.<br />
+  Any other download link (zip, exe, iso, pdf …) is fetched with up to <b>16 parallel connections</b>, like Internet Download Manager.<br />
   by <b>Kamrul Islam Rubel</b>
 </p>
 
 <p align="center">
-  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.5.0-win-x64.zip"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveLite1--0.5.0--win--x64.zip-FF7A1A?style=for-the-badge" /></a>
+  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.6.0-win-x64.zip"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveLite1--0.6.0--win--x64.zip-FF7A1A?style=for-the-badge" /></a>
 </p>
 
 <p align="center">
-  <img alt="version" src="https://img.shields.io/badge/version-0.5.0-FF7A1A" />
+  <img alt="version" src="https://img.shields.io/badge/version-0.6.0-FF7A1A" />
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-2D2D2D" />
   <img alt="runtime" src="https://img.shields.io/badge/.NET%20Framework-4.8-512BD4" />
   <img alt="ui" src="https://img.shields.io/badge/UI-WPF%20%2B%20MaterialDesignInXaml%205.3.2-2D2D2D" />
@@ -36,6 +37,7 @@
 - [Using SwiftSaveLite1](#using-swiftsavelite1)
   - [Adding videos](#adding-videos)
   - [Supported links](#supported-links)
+  - [Direct file links (like IDM)](#direct-file-links-like-idm)
   - [The download list](#the-download-list)
   - [Mouse, keyboard and menus](#mouse-keyboard-and-menus)
   - [Several downloads at once](#several-downloads-at-once)
@@ -59,8 +61,9 @@
 ## Highlights
 
 - **Five sites** — YouTube, Facebook, TikTok, X (Twitter) and Instagram: videos, reels, shorts and posts, including share links such as `fb.watch`, `vm.tiktok.com` and `t.co`.
-- **Paste and go** — press <kbd>Ctrl</kbd>+<kbd>V</kbd> anywhere in the window. One link, many links, links glued together or mixed with other text: every supported video on the clipboard is queued.
-- **Smart Download** — on by default: every supported link you copy anywhere in Windows (browser, chat, e-mail) is queued automatically.
+- **Any file link, like IDM** — every other download link (`.zip`, `.exe`, `.iso`, `.pdf`, `.mp4` …) is downloaded by the app itself with **8 parallel connections** by default (1–16 in Settings): the file is split into ranges, a connection that finishes takes over half of the biggest range still open, and pause, errors, closing the app or a reboot continue exactly where they stopped. A link that opens a web page is refused with a short message.
+- **Paste and go** — press <kbd>Ctrl</kbd>+<kbd>V</kbd> anywhere in the window. One link, many links, links glued together or mixed with other text: every supported video and file link on the clipboard is queued.
+- **Smart Download** — on by default: every supported video link you copy anywhere in Windows (browser, chat, e-mail) is queued automatically, and so is every copied link that looks like a file (`.zip`, `.exe`, `.pdf` …, or a "download" link).
 - **Full HD first** — on every site the best version up to 1920×1080 is taken (vertical videos: up to 1080×1920).
 - **MP4 video or MP3 audio** — one click on the status-bar icon switches new links between video (MP4 up to **1920×1080**, H.264 + AAC, plays everywhere; VP9 / AV1 / WebM sources are converted) and audio only (**MP3 320 kbps** with title, artist and cover art).
 - **Playlists** — paste or copy a playlist link, or the link of any video playing inside a playlist, and its videos (up to 500) are queued. Copy it again later and only what is missing is added: videos already queued, finished or in the download folder are skipped.
@@ -88,6 +91,8 @@
 | ![Settings](docs/screenshots/readme-settings.png) | ![About](docs/screenshots/readme-about.png) |
 | **How to fix this — opened from a failed download** | **Sign-in cookies set up** |
 | ![How to fix this](docs/screenshots/tutorial-fix-help.png) | ![Cookies set up](docs/screenshots/tutorial-fix-cookies.png) |
+| **Any file link — 8 connections, like IDM** | **Ready: copy any video or file link** |
+| ![File links](docs/screenshots/tutorial-files.png) | ![Empty list](docs/screenshots/tutorial-empty.png) |
 | **First start: tools download with speed and ETA** | **Tray menu** |
 | ![First start](docs/screenshots/phase8-tools-download.png) | ![Tray menu](docs/screenshots/phase9-tray-menu.png) |
 
@@ -103,7 +108,7 @@
 
 ## Download & install
 
-1. Download **[`SwiftSaveLite1-0.5.0-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.5.0-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
+1. Download **[`SwiftSaveLite1-0.6.0-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.6.0-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
 2. Unzip it into a folder you can write to, e.g. `D:\Apps\SwiftSaveLite1` (not `C:\Program Files`).
 3. Run **`SwiftSaveLite1.exe`**.
 
@@ -116,9 +121,9 @@
 ## Quick start
 
 1. Start `SwiftSaveLite1.exe`. On the first start the status bar shows the tools being downloaded, e.g. *"Downloading ffmpeg… 42 % · 3.2 MB/s · ETA 00:31"* (about 2–3 minutes).
-2. Copy a YouTube, Facebook, TikTok, X or Instagram link in your browser or app.
+2. Copy a YouTube, Facebook, TikTok, X or Instagram link — or the link of any file (zip, exe, iso, pdf …) — in your browser or app.
 3. With Smart Download on (default) it is queued at once — even while the tools are still downloading on the first start, and also a link you copied before starting the app. Otherwise click the SwiftSaveLite1 window and press <kbd>Ctrl</kbd>+<kbd>V</kbd>.
-4. The finished MP4 (or MP3 in audio mode) is in `%USERPROFILE%\Downloads\SwiftSaveLite1`. Double-click the item to play it.
+4. The finished MP4 (or MP3 in audio mode, or the file as it is) is in `%USERPROFILE%\Downloads\SwiftSaveLite1`. Double-click the item to open it.
 
 ## Using SwiftSaveLite1
 
@@ -126,9 +131,9 @@
 
 | Way | How |
 |---|---|
-| **Ctrl+V** | Click the window and press <kbd>Ctrl</kbd>+<kbd>V</kbd>. The empty list reminds you: *"Just copy a video link and press Ctrl+V here"*, with the icons of the supported sites. |
+| **Ctrl+V** | Click the window and press <kbd>Ctrl</kbd>+<kbd>V</kbd>. The empty list reminds you: *"Just copy a video or file link and press Ctrl+V here"*, with the icons of the supported sites. |
 | **Right-click → Paste video link** | On the empty list, on any item and on the status bar. |
-| **Smart Download** | Copy a link anywhere in Windows; it is queued automatically (orange clipboard icon in the status bar while on). A link already on the clipboard when the app starts is queued too, unless Smart Download already queued it in an earlier session. Links copied while the tools are still downloading are queued as soon as they are ready. Copying the same link again later tries again. Text the app copies itself (**Copy link**) is ignored. |
+| **Smart Download** | Copy a link anywhere in Windows; it is queued automatically (orange clipboard icon in the status bar while on). File links are taken only when they look like a file — a known file extension (`.zip`, `.7z`, `.exe`, `.msi`, `.iso`, `.pdf`, `.docx`, `.mp4`, `.mp3`, `.apk` …) or a download link (`download`, `attachment`, `dl=1`, `export=download`) — so copying ordinary web-page links never starts a download. A link already on the clipboard when the app starts is queued too, unless Smart Download already queued it in an earlier session. Links copied while the tools are still downloading are queued as soon as they are ready. Copying the same link again later tries again. Text the app copies itself (**Copy link**) is ignored. |
 | **Paste box** | Turn on **⚙ Settings → Show paste box** to get a link box with a **+** button; <kbd>Enter</kbd> adds the link. Pasting several links into the box queues all of them. |
 
 ### Video or audio
@@ -166,7 +171,23 @@ A post with several videos (an X post, an Instagram carousel) downloads all of t
 
 <p align="center"><img src="docs/screenshots/tutorial-playlist.png" alt="A playlist copied again: 4 videos were already downloaded, the other 15 are queued" width="456" /></p>
 
-Not accepted: profiles and channels (`youtube.com/@name`, `tiktok.com/@user`, `instagram.com/user/`, `x.com/user`), hashtags, sounds, stories, X Spaces, photo-only posts, other sites and look-alike domains (`notyoutube.com`, `notfacebook.com`, `tiktok.com.evil.example`).
+Not accepted on the five video sites: profiles and channels (`youtube.com/@name`, `tiktok.com/@user`, `instagram.com/user/`, `x.com/user`), hashtags, sounds, stories, X Spaces, photo-only posts — these never become file links. Links of every other site (also look-alike domains such as `notyoutube.com`) are **direct file links**, below.
+
+### Direct file links (like IDM)
+
+Every other `http://` / `https://` link — or one starting with `www.` — is a **file link**: SwiftSaveLite1 downloads the file itself (no yt-dlp, no conversion) into the download folder.
+
+<p align="center"><img src="docs/screenshots/tutorial-files.png" alt="File links: an installer, two archives and a PDF done, a disk image downloading over 8 connections with its segment strip" width="491" /></p>
+
+- **Checked first.** The app asks the server for the first byte before the link is added: the item shows the real file name and size at once (*"Queued: linux-6.6.tar.xz (134 MB)"*). A link that opens a **web page** is not added — the status bar says *"This link opens a web page, not a file: …"* (open the page in your browser, start the download there and copy the link of the download itself).
+- **8 connections** (⚙ Settings → *Connections per file*, 1–16). The file is split into ranges, one per connection (at least 1 MB each, so small files use fewer). When a connection finishes its range it takes over the second half of the range with the most bytes left, so all connections stay busy to the end. The detail line shows *"45 % · 7.4 MB/s · ETA 00:03 · 8 connections"* and a thin **segment strip** under the progress bar shows each range filling up. Servers that limit the speed of each connection get much faster: in testing a server capped at 1 MB/s per connection delivered a 48 MB file in 48 s with 1 connection and in 6.5 s with 8. On a line that is already full with one connection more connections do not add speed.
+- **Resumable.** Next to `name.ext.part` the app keeps `name.ext.part.xml` (the link, size, ETag / Last-Modified and how far every range got, saved every 2 seconds). Pause, **Retry** after an error, closing the app and a reboot continue from there; if the file changed on the server it starts over.
+- **Servers without range support** get one connection (and start over after an interruption). A server that ignores ranges half-way is detected and the file is downloaded again with one connection.
+- **Short-lived links:** when the address a download was redirected to expires (signed CDN links such as GitHub release assets), the app asks the original link again and continues.
+- **Names:** the server's name (`Content-Disposition`) first, otherwise the last part of the link (`download.php` → `download.zip` from the file type). A different file with the same name gets `name (2).ext`; a file with the same name **and size** already in the folder counts as already downloaded.
+- **Saved as it is.** The MP4 / MP3 toggle does not apply to file links. Finished files get the same *downloaded from the internet* mark a browser adds, so Windows SmartScreen checks programs before they run.
+- **In the list:** an icon for the kind of file (archive, Windows program, Android app, disk image, PDF, document, image, video, audio …), a type badge (*ZIP*, *EXE*) and a download badge with the server's name as tool tip. A failed file download opens its own **How to fix this** (file not found, access denied, rate limit, network, web page …).
+- File links are independent of the five video sites: a tool update does not pause them, and a server that answers *"too many requests"* only makes that one download wait.
 
 ### The download list
 
@@ -176,6 +197,7 @@ Each row shows a status icon, the title, a detail line, the size, a thumbnail wi
 |---|---|
 | *Queued* | Waiting for its turn |
 | *35 % · 328 KB/s · ETA 01:38* | Downloading (orange progress bar) |
+| *45 % · 7.4 MB/s · ETA 00:03 · 8 connections* | A file link downloading over 8 connections (segment strip under the bar) |
 | *Converting to MP4…* / *Converting to MP3…* | ffmpeg is converting a non-H.264 source / extracting the MP3 |
 | *Paused · 37 %* | Paused; the partial file is kept |
 | *Done* | Finished; double-click to play |
@@ -184,6 +206,7 @@ Each row shows a status icon, the title, a detail line, the size, a thumbnail wi
 | *Instagram requires sign-in for this post …* | The site shows this post only to signed-in users — see [cookies](#sign-in-bot-checks-age-limits-and-cookies) |
 | *No video in this post* | The post has no video (text or photos only) |
 | *File missing* | The finished file was moved or deleted outside the app |
+| *File not found on … (HTTP 404)* | A file link the server does not have (any more) |
 
 **Something went wrong? Click the status icon.** The red icon of a failed download, or the orange hourglass of a download waiting for an automatic retry, opens **How to fix this**: what happened, numbered steps to fix it for exactly this error (sign-in required, age-restricted, bot check, region block, video unavailable, no video in the post, network, stalled, folder, conversion, missing tools, …), **Retry** and **Copy details** (link, error and tool versions to send to the author). For sign-in problems the window also sets up `cookies.txt` — see [cookies](#sign-in-bot-checks-age-limits-and-cookies).
 
@@ -238,13 +261,14 @@ Click **⚙** at the right end of the status bar.
 | Setting | Default | Effect |
 |---|---|---|
 | Download folder | `%USERPROFILE%\Downloads\SwiftSaveLite1` | Where MP4 / MP3 files are saved. 📂 chooses a folder, ↗ opens it in Explorer. The folder is checked for write access. |
-| Smart Download | **On** | Queue YouTube, Facebook, TikTok, X and Instagram links copied anywhere in Windows |
+| Smart Download | **On** | Queue YouTube, Facebook, TikTok, X and Instagram links copied anywhere in Windows, and copied links that look like a file |
 | Show paste box | Off | Show the link box and **+** button above the list |
 | Close to system tray | **On** | The window's **×** hides the app to the tray instead of exiting |
 | Start with Windows | **On** | Starts hidden in the tray when you sign in to Windows (per-user `Run` entry, no admin rights; the first start of a new copy creates it). Switching the entry off in Windows' *Startup apps* also clears this box |
 | Resume downloads at startup | **On** | At app start every queued and paused download runs again. Off: nothing starts by itself — they wait as Paused until **Resume** / **Resume all** |
 | Delete automatically from download list | **On**, keep **5** | Keep only the N most recent finished downloads in the list (0–9999); files are never deleted |
 | Simultaneous downloads | **1** | How many downloads the queue runs at the same time (1–5); applies immediately, also to running downloads |
+| Connections per file | **8** | Parallel connections for one direct file download (1–16), like IDM; used by file downloads that start after the change |
 | Sign-in cookies | not set | Shows which sites `cookies.txt` has cookies for; **Set up…** opens the step-by-step guide with **Choose cookies file…** |
 
 Changes are saved immediately to `settings.xml`.
@@ -274,12 +298,13 @@ On Windows 11 new tray icons appear under the **^** (show hidden icons) arrow; d
 | First start | yt-dlp, ffmpeg (only `ffmpeg.exe` is taken from the zip) and deno are downloaded into `tools\` with progress, speed and ETA. Failed downloads are retried; clicking the status text retries by hand. |
 | A video is queued | YouTube: the title comes from YouTube's oEmbed service, the length from yt-dlp metadata and the thumbnail from `i.ytimg.com`. Other sites: title, length and thumbnail come from yt-dlp metadata; the thumbnail shows a small site badge (and the site icon until the image has loaded). |
 | A download finishes | The file is checked with ffmpeg; anything that is not H.264 + AAC in MP4 (or MP3 for audio items) is converted. Older finished items are trimmed from the list (auto-clean). |
-| A duplicate link arrives | It is ignored with a status message for a few seconds: *already in the list* (same video in the same format) or *already downloaded* (an MP4 / MP3 with that video id is in the download folder). |
+| A duplicate link arrives | It is ignored with a status message for a few seconds: *already in the list* (same video in the same format, or the same file link) or *already downloaded* (an MP4 / MP3 with that video id, or a file with the same name and size, is in the download folder). |
+| A file link is added | The server is asked for the first byte: name, size and type are shown at once; a web page is refused. The download then runs over up to 8 connections (Settings) and saves its progress every 2 seconds. |
 | A playlist is copied again | Only its missing videos are queued, in playlist order: videos already queued, downloading, paused or finished in the list, or already in the download folder, are skipped; failed or cancelled ones are queued again. The status bar says *"Queued 12 videos (playlist has 20) · skipped …"* or *"Playlist up to date — …"*. |
 | A site limits your network (bot check, HTTP 429) | Only that site waits — downloads from the other sites keep going. YouTube: an immediate second attempt with more YouTube player clients, then automatic retries after 2 → 5 → 10 → 20 → 30 → 60 minutes (HTTP 403: 30 s → 2 → 5 min), with a countdown in the list. |
 | Network error | Retries after 30 s → 2 min → 5 min. |
-| ≈ 15 s after start, then every 12 h | Checks for newer yt-dlp / ffmpeg / deno (at most every 6 h). A newer tool is downloaded, running downloads are paused, the file is swapped (rolled back on failure) and downloads resume — no dialogs. |
-| The app is closed or crashes mid-download | The partial file is kept and the item is saved as Paused; it continues on the next start when **Resume downloads at startup** is on. |
+| ≈ 15 s after start, then every 12 h | Checks for newer yt-dlp / ffmpeg / deno (at most every 6 h). A newer tool is downloaded, running video downloads are paused, the file is swapped (rolled back on failure) and downloads resume — no dialogs. File downloads keep running. |
+| The app is closed or crashes mid-download | The partial file is kept and the item is saved as Paused; it continues on the next start when **Resume downloads at startup** is on. File links continue from the saved ranges (at most the last 2 seconds are fetched again). |
 | Every start | The Windows start-up entry is made to match **Start with Windows** — also after the portable folder was moved. |
 | You sign in to Windows | With **Start with Windows** on the app starts hidden in the tray. |
 | The exe is started again from the same folder | The running window comes to the front (also from the tray). |
@@ -293,6 +318,7 @@ On Windows 11 new tray icons appear under the **^** (show hidden icons) arrow; d
 - **Sanitising:** `\ / | :` become `-`, `"` becomes `'`, `< > ? *` and control characters are removed, runs of whitespace collapse to one space, leading and trailing dots/spaces are trimmed. Example: `AC/DC: Live?` → `AC-DC- Live [id].mp4`. Titles in any language (Bangla, Korean, …) are kept.
 - **Partial files** (`.part`) sit next to the output and are deleted on cancel. While an MP3 is being made its files are called `… [id].a.<ext>`, so an MP4 and an MP3 of the same video can download at the same time without touching each other.
 - **Audio source:** the audio track of the post itself (TikTok's separate "music track" is not used, it can be a different recording).
+- **File links** are saved unchanged under the server's file name (or the name in the link), made safe for Windows the same way; `name (2).ext` when a different file already has the name. While downloading the folder holds `name.ext.part` (pre-sized, sparse on NTFS) and `name.ext.part.xml` (the saved ranges); both disappear when the file is finished, cancelled or removed. Finished files carry the *Zone.Identifier* "downloaded from the internet" mark.
 
 ## Sign-in, bot checks, age limits and cookies
 
@@ -360,6 +386,7 @@ Usually changed through **⚙ Settings**. To edit it by hand, exit the app first
   <SmartClipboardFingerprint>…</SmartClipboardFingerprint> <!-- hash of the links Smart Download last queued; written by the app -->
   <StartWithWindows>true</StartWithWindows>             <!-- HKCU\…\CurrentVersion\Run entry "SwiftSaveLite1" -->
   <AutoResumeDownloads>true</AutoResumeDownloads>
+  <ConnectionsPerDownload>8</ConnectionsPerDownload>    <!-- 1..16, file links -->
 </Settings>
 ```
 
@@ -379,8 +406,9 @@ SwiftSaveLite1 has **no telemetry, no accounts and no ads**. It connects only to
 | `github.com`, `api.github.com` | yt-dlp and deno downloads and version checks |
 | `www.gyan.dev` | ffmpeg download and version check (fallback: `github.com/yt-dlp/FFmpeg-Builds`) |
 | `www.facebook.com` | Only when you click the contact link |
+| The server of a file link | Only for file links you add (or copy, with Smart Download on, when they look like a file): one request for the first byte, then the download |
 
-With Smart Download on, the app reads text copied to the clipboard to look for supported video links. Nothing leaves your computer except the resulting requests to those sites.
+With Smart Download on, the app reads text copied to the clipboard to look for supported video links and file links. Nothing leaves your computer except the resulting requests to those sites.
 
 ## Troubleshooting / FAQ
 
@@ -433,6 +461,30 @@ A YouTube **Mix** (`list=RD…`, the endless "Mix – …" lists YouTube makes f
 </details>
 
 <details>
+<summary><b>"This link opens a web page, not a file"</b></summary>
+
+The link leads to a page (for example a download page with a button), not to the file. Open it in your browser, start the download there, then right-click the download button — or the download in the browser's download list — choose **Copy link address** and press <kbd>Ctrl</kbd>+<kbd>V</kbd> in SwiftSaveLite1. Video pages of sites other than the five supported ones are web pages too.
+</details>
+
+<details>
+<summary><b>A file downloads with only 1 connection</b></summary>
+
+The server does not support byte ranges (it always sends the whole file), so the file cannot be split — the log says *"1 connection (no range support)"*. Small files use fewer connections: each range is at least 1 MB, so a 3 MB file uses 3. Check ⚙ Settings → *Connections per file*.
+</details>
+
+<details>
+<summary><b>More connections are not faster</b></summary>
+
+Several connections help when a server limits the speed of each connection. When one connection already fills your internet line, more connections cannot add speed. Some servers allow only one or two connections per user — the app then continues with fewer; lower *Connections per file* if a site keeps answering "too many requests".
+</details>
+
+<details>
+<summary><b>Can I go back to an older version?</b></summary>
+
+Yes, but a `downloads.xml` with file-link items (version 0.6.0 and later) cannot be read by older versions: they start with an empty list. Your files are not affected.
+</details>
+
+<details>
 <summary><b>The app starts when I sign in to Windows</b></summary>
 
 That is **⚙ Settings → Start with Windows** (on by default): the app starts hidden in the tray. Untick it to remove the start-up entry. Turning it off in Windows' *Settings → Apps → Startup* also works — the app then unticks its own box.
@@ -472,6 +524,7 @@ The exe is not code-signed and `yt-dlp.exe` is sometimes flagged generically. Al
 
 | Version | Highlights |
 |---|---|
+| **0.6.0** | **Any direct file link, like IDM**: every other http(s) / `www.` link is downloaded by the app itself with up to 16 parallel connections (default 8, ⚙ Settings → *Connections per file*), work stealing between connections, resumable after pause, errors, exit and reboot (`.part` + `.part.xml`), one connection for servers without range support; web-page links refused with a message; name and size shown at once; file-type icons, type badge, connection count and a segment strip in the list; Smart Download picks up copied links that look like a file; file-specific *How to fix this*; Mark of the Web on finished files |
 | **0.5.0** | **Playlist top-up**: a copied link of a video inside a playlist queues the whole playlist, and copying it again later adds only what is missing (skips videos already queued, finished or in the download folder; YouTube Mix stays one video); **Start with Windows** (default on, hidden in the tray); **Resume downloads at startup** (default on) — a download cut off by closing the app is kept as Paused |
 | **0.4.1** | Click the status icon of a failed (or retry-waiting) download for **How to fix this** — detailed steps per error, Retry, Copy details; guided **cookies.txt** set-up with exporter links, file check and format fix (**Choose cookies file…**) and per-site coverage; ⚙ Settings → Sign-in cookies; TikTok region blocks reported separately from sign-in |
 | **0.4.0** | **Facebook, TikTok, X (Twitter) and Instagram** links — paste, link box and Smart Download; share links (`fb.watch`, `vm.tiktok.com`, `t.co`, …) expanded before queueing; best version up to 1080p on every site; site badge and thumbnails from the posts; per-site error messages (sign-in, region block, no video) and per-site rate-limit waits; MP3 and MP4 of the same video can download at the same time |
@@ -490,12 +543,13 @@ The exe is not code-signed and `yt-dlp.exe` is sometimes flagged generically. Al
 | [MaterialDesignInXamlToolkit](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit) 5.3.2 | UI styles and icons | MIT |
 | [Microsoft.Xaml.Behaviors.Wpf](https://github.com/microsoft/XamlBehaviorsWpf) | Dependency of MaterialDesignThemes | MIT |
 | [Simple Icons](https://simpleicons.org) | Facebook, TikTok, X and Instagram glyphs (`Styles/SiteIcons.xaml`) | CC0-1.0 (brand marks belong to their owners) |
+| [Material Design Icons](https://pictogrammers.com/library/mdi/) | The download glyph of the file badge (`Styles/SiteIcons.xaml`; the same icon set as the app's PackIcons) | Apache 2.0 |
 
 The tools are not included in the zip; the app downloads them from their official release locations.
 
 ## Disclaimer
 
-SwiftSaveLite1 is meant for downloading videos you are allowed to download — your own uploads, openly licensed videos, or content whose rights holder permits it. Respect the Terms of Service of YouTube, Facebook, TikTok, X and Instagram and the copyright law of your country. The author is not responsible for misuse.
+SwiftSaveLite1 is meant for downloading videos and files you are allowed to download — your own uploads, openly licensed videos and files, or content whose rights holder permits it. Respect the Terms of Service of YouTube, Facebook, TikTok, X and Instagram and the copyright law of your country. The author is not responsible for misuse.
 
 ## Author and contact
 
