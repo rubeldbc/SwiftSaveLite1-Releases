@@ -8,19 +8,20 @@
   <b>A compact, portable video and file downloader for Windows — YouTube, Facebook, TikTok, X (Twitter), Instagram and any direct file link.</b><br />
   Copy a link, press <kbd>Ctrl</kbd>+<kbd>V</kbd> and get the best version up to 1080p as <b>MP4 (H.264 / AAC)</b> — or a 320 kbps <b>MP3</b>.<br />
   Any other download link (zip, exe, iso, pdf …) is fetched with up to <b>16 parallel connections</b>, like Internet Download Manager.<br />
+  Click a download link in <b>Chrome, Edge, Brave or Firefox</b> and SwiftSaveLite1 takes it over — signed-in downloads included.<br />
   by <b>Kamrul Islam Rubel</b>
 </p>
 
 <p align="center">
-  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.6.0-win-x64.zip"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveLite1--0.6.0--win--x64.zip-FF7A1A?style=for-the-badge" /></a>
+  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveSetup-0.9.0.exe"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveSetup--0.9.0.exe-FF7A1A?style=for-the-badge" /></a>
 </p>
 
 <p align="center">
-  <img alt="version" src="https://img.shields.io/badge/version-0.6.0-FF7A1A" />
+  <img alt="version" src="https://img.shields.io/badge/version-0.9.0-FF7A1A" />
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-2D2D2D" />
   <img alt="runtime" src="https://img.shields.io/badge/.NET%20Framework-4.8-512BD4" />
   <img alt="ui" src="https://img.shields.io/badge/UI-WPF%20%2B%20MaterialDesignInXaml%205.3.2-2D2D2D" />
-  <img alt="portable" src="https://img.shields.io/badge/install-none%20(portable)-FF7A1A" />
+  <img alt="install" src="https://img.shields.io/badge/install-setup%20or%20portable-FF7A1A" />
 </p>
 
 > This repository hosts the **downloads** and the **user guide** of SwiftSaveLite1. The source code is not public.
@@ -33,11 +34,16 @@
 - [Screenshots](#screenshots)
 - [System requirements](#system-requirements)
 - [Download & install](#download--install)
+  - [Setup (recommended)](#setup-recommended)
+  - [Portable zip](#portable-zip)
+  - [Uninstall](#uninstall)
+  - [Coming from Internet Download Manager](#coming-from-internet-download-manager)
 - [Quick start](#quick-start)
 - [Using SwiftSaveLite1](#using-swiftsavelite1)
   - [Adding videos](#adding-videos)
   - [Supported links](#supported-links)
   - [Direct file links (like IDM)](#direct-file-links-like-idm)
+  - [Download from your browser, like IDM](#download-from-your-browser-like-idm)
   - [The download list](#the-download-list)
   - [Mouse, keyboard and menus](#mouse-keyboard-and-menus)
   - [Several downloads at once](#several-downloads-at-once)
@@ -61,7 +67,9 @@
 ## Highlights
 
 - **Five sites** — YouTube, Facebook, TikTok, X (Twitter) and Instagram: videos, reels, shorts and posts, including share links such as `fb.watch`, `vm.tiktok.com` and `t.co`.
-- **Any file link, like IDM** — every other download link (`.zip`, `.exe`, `.iso`, `.pdf`, `.mp4` …) is downloaded by the app itself with **8 parallel connections** by default (1–16 in Settings): the file is split into ranges, a connection that finishes takes over half of the biggest range still open, and pause, errors, closing the app or a reboot continue exactly where they stopped. A link that opens a web page is refused with a short message.
+- **Parallel downloads for videos too** — YouTube videos fetch **4 pieces at once** (⚙ Settings → *YouTube connections*, 1–8, kept low so YouTube does not slow you down), Facebook, TikTok, X and Instagram videos up to **16** (*Other connections*): a download fills your internet line instead of waiting for one piece after the other.
+- **Any file link, like IDM** — every other download link (`.zip`, `.exe`, `.iso`, `.pdf`, `.mp4` …) is downloaded by the app itself with **16 parallel connections** by default (1–16 in Settings → *Other connections*): the file is split into ranges, a connection that finishes takes over half of the biggest range still open, and pause, errors, closing the app or a reboot continue exactly where they stopped. A link that opens a web page is refused with a short message.
+- **Browser integration, like IDM** — with the SwiftSaveLite1 extension in Chrome, Edge, Brave or Firefox, a download you start in the browser is handed to the app (with the browser's sign-in, so downloads that need an account work too); *Download with SwiftSaveLite1* in the right-click menu of links and videos; a **tiny** download icon on a video, only while the pointer is over it. <kbd>Alt</kbd>+click keeps a download in the browser. When the app is closed, a click starts it hidden in the tray.
 - **Paste and go** — press <kbd>Ctrl</kbd>+<kbd>V</kbd> anywhere in the window. One link, many links, links glued together or mixed with other text: every supported video and file link on the clipboard is queued.
 - **Smart Download** — on by default: every supported video link you copy anywhere in Windows (browser, chat, e-mail) is queued automatically, and so is every copied link that looks like a file (`.zip`, `.exe`, `.pdf` …, or a "download" link).
 - **Full HD first** — on every site the best version up to 1920×1080 is taken (vertical videos: up to 1080×1920).
@@ -93,6 +101,10 @@
 | ![How to fix this](docs/screenshots/tutorial-fix-help.png) | ![Cookies set up](docs/screenshots/tutorial-fix-cookies.png) |
 | **Any file link — 8 connections, like IDM** | **Ready: copy any video or file link** |
 | ![File links](docs/screenshots/tutorial-files.png) | ![Empty list](docs/screenshots/tutorial-empty.png) |
+| **The tiny icon on a video (only while the pointer is over it)** | **…and gone when the pointer leaves** |
+| ![Icon on a YouTube video](docs/screenshots/phase15-youtube-icon.png) | ![No icon](docs/screenshots/phase15-youtube-no-icon.png) |
+| **Setup — Internet Download Manager found** | **Setup — done, one step left per browser** |
+| ![Setup with IDM found](docs/screenshots/phase16-setup-idm.png) | ![Setup finished](docs/screenshots/phase16-setup-finish.png) |
 | **First start: tools download with speed and ETA** | **Tray menu** |
 | ![First start](docs/screenshots/phase8-tools-download.png) | ![Tray menu](docs/screenshots/phase9-tray-menu.png) |
 
@@ -108,15 +120,50 @@
 
 ## Download & install
 
-1. Download **[`SwiftSaveLite1-0.6.0-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.6.0-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
+### Setup (recommended)
+
+1. Download **[`SwiftSaveSetup-0.9.0.exe`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveSetup-0.9.0.exe)** (3.4 MB) — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
+2. Run it. It installs **for you only, without admin rights**, into `%LOCALAPPDATA%\Programs\SwiftSaveLite1` (changeable; Program Files is refused because the app updates its tools in its own folder).
+3. Options: **Desktop shortcut** (on), **Start SwiftSaveLite1 when done** (on). The page also lists the browsers found on the PC and, when it is there, **Internet Download Manager** (see below).
+4. **Install** takes a few seconds: program files, `uninstall.exe`, a Start-menu shortcut, an entry in **Settings → Apps** and the browser connection for Chrome, Edge, Brave and Firefox.
+5. The last page shows the **one step left in each browser** to add the SwiftSaveLite1 extension (buttons *Extensions page* and *Copy* for the folder, plus the steps from [Download from your browser](#download-from-your-browser-like-idm)).
+
+> **Does the setup add the browser extension by itself?** Not yet. Browsers on Windows accept an extension added by an installer only from their store: Chrome, Edge and Brave from the **Chrome Web Store**, Firefox only a **Mozilla-signed** package. Until SwiftSaveLite1 is published there, the setup connects the browsers and shows the Load-unpacked steps. Once a listing exists, the setup adds the extension the way IDM does: the browser shows *"New extension added"* once and you click **Enable** (a browser rule nobody can skip). A store version is planned.
+
+> Windows SmartScreen may warn about an unrecognised app because the setup is not code-signed. Choose **More info → Run anyway**.
+
+**Update:** run the newer setup. A running SwiftSaveLite1 is asked to close first (running downloads are saved and continue after the update), program files are replaced, and `settings.xml`, `downloads.xml`, `cookies.txt`, `tools\` and `logs\` stay. A folder holding a portable copy is updated in place the same way.
+
+**Without a window:** `SwiftSaveSetup-0.9.0.exe --silent [--dir "D:\Apps\SwiftSaveLite1"] [--no-desktop] [--start]` (exit code 0 = installed). Every setup run is logged to `%TEMP%\SwiftSaveSetup.log`.
+
+### Portable zip
+
+1. Download **[`SwiftSaveLite1-0.9.0-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.9.0-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
 2. Unzip it into a folder you can write to, e.g. `D:\Apps\SwiftSaveLite1` (not `C:\Program Files`).
 3. Run **`SwiftSaveLite1.exe`**.
 
 > Windows SmartScreen may warn about an unrecognised app because the exe is not code-signed. Choose **More info → Run anyway**.
 
-**Update:** exit the app, replace the exe and the dlls with the new version, keep `settings.xml`, `downloads.xml` and `tools\`.
+**Update:** exit the app, replace the exes, the dlls and the `browser\` folder with the new version, keep `settings.xml`, `downloads.xml` and `tools\`. Then click the reload button of the SwiftSaveLite1 extension on each browser's extensions page (Firefox: load it again). **Uninstall:** untick **⚙ Settings → Start with Windows** and **Browser integration** (removes the Windows start-up entry and the browsers' registration), remove the extension in each browser, exit the app (tray icon → **Exit**) and delete its folder. Your videos in the download folder are not touched.
 
-**Uninstall:** untick **⚙ Settings → Start with Windows** (removes the Windows start-up entry), exit the app (tray icon → **Exit**) and delete its folder. Your videos in the download folder are not touched.
+### Uninstall
+
+**Settings → Apps → Installed apps → SwiftSaveLite1 → Uninstall** (or run `uninstall.exe` in the app folder). The window lists what goes and what stays; **Uninstall** takes about a second:
+
+- **Removed:** the program with yt-dlp, ffmpeg and deno (`tools\`), `settings.xml`, `downloads.xml`, `cookies.txt`, `logs\`, the *Start with Windows* entry, the browser connection (`com.swiftsavelite1.bridge`), a store-added extension (the browser removes it at its next start), the shortcuts and the Apps entry. A running SwiftSaveLite1 is closed first.
+- **Kept:** your download folder and every downloaded file (also when it lies inside the app folder), other portable copies and their settings, and everything shared with other programs (.NET Framework is part of Windows).
+- An extension you loaded unpacked can only be removed in the browser: the last page has an *Extensions page* button per browser (without the app it does nothing any more).
+
+**Without a window:** `uninstall.exe --uninstall --silent` (exit code 0 = removed). The uninstaller runs from a copy in `%TEMP%` so it can delete its own folder; the copy deletes itself a moment later.
+
+### Coming from Internet Download Manager
+
+Both programs catch the same browser downloads, so use one of them per browser. The setup looks for IDM (its Settings → Apps entry) and for IDM's browser extension (*IDM Integration Module* in Chrome, Edge, Brave and Firefox profiles) and shows what it found, with:
+
+- **Uninstall IDM** — opens IDM's own uninstaller, exactly as Settings → Apps would; you confirm in IDM's windows. The setup checks again when it closes.
+- **Extensions** — opens that browser's extensions page, where you remove *IDM Integration Module*.
+
+The setup itself changes nothing of IDM — you decide, and the install works either way. ⚙ Settings → Browser integration → *Set up…* in the app also warns about every browser where IDM is still connected.
 
 ## Quick start
 
@@ -180,7 +227,7 @@ Every other `http://` / `https://` link — or one starting with `www.` — is a
 <p align="center"><img src="docs/screenshots/tutorial-files.png" alt="File links: an installer, two archives and a PDF done, a disk image downloading over 8 connections with its segment strip" width="491" /></p>
 
 - **Checked first.** The app asks the server for the first byte before the link is added: the item shows the real file name and size at once (*"Queued: linux-6.6.tar.xz (134 MB)"*). A link that opens a **web page** is not added — the status bar says *"This link opens a web page, not a file: …"* (open the page in your browser, start the download there and copy the link of the download itself).
-- **8 connections** (⚙ Settings → *Connections per file*, 1–16). The file is split into ranges, one per connection (at least 1 MB each, so small files use fewer). When a connection finishes its range it takes over the second half of the range with the most bytes left, so all connections stay busy to the end. The detail line shows *"45 % · 7.4 MB/s · ETA 00:03 · 8 connections"* and a thin **segment strip** under the progress bar shows each range filling up. Servers that limit the speed of each connection get much faster: in testing a server capped at 1 MB/s per connection delivered a 48 MB file in 48 s with 1 connection and in 6.5 s with 8. On a line that is already full with one connection more connections do not add speed.
+- **16 connections** (⚙ Settings → *Other connections*, 1–16; before 0.9.0 the default was 8 — such settings are raised to 16 once). The file is split into ranges, one per connection (at least 1 MB each, so small files use fewer). When a connection finishes its range it takes over the second half of the range with the most bytes left, so all connections stay busy to the end. The detail line shows *"45 % · 7.4 MB/s · ETA 00:03 · 8 connections"* and a thin **segment strip** under the progress bar shows each range filling up. Servers that limit the speed of each connection get much faster: in testing a server capped at 1 MB/s per connection delivered a 48 MB file in 48 s with 1 connection and in 6.5 s with 8. On a line that is already full with one connection more connections do not add speed.
 - **Resumable.** Next to `name.ext.part` the app keeps `name.ext.part.xml` (the link, size, ETag / Last-Modified and how far every range got, saved every 2 seconds). Pause, **Retry** after an error, closing the app and a reboot continue from there; if the file changed on the server it starts over.
 - **Servers without range support** get one connection (and start over after an interruption). A server that ignores ranges half-way is detected and the file is downloaded again with one connection.
 - **Short-lived links:** when the address a download was redirected to expires (signed CDN links such as GitHub release assets), the app asks the original link again and continues.
@@ -188,6 +235,32 @@ Every other `http://` / `https://` link — or one starting with `www.` — is a
 - **Saved as it is.** The MP4 / MP3 toggle does not apply to file links. Finished files get the same *downloaded from the internet* mark a browser adds, so Windows SmartScreen checks programs before they run.
 - **In the list:** an icon for the kind of file (archive, Windows program, Android app, disk image, PDF, document, image, video, audio …), a type badge (*ZIP*, *EXE*) and a download badge with the server's name as tool tip. A failed file download opens its own **How to fix this** (file not found, access denied, rate limit, network, web page …).
 - File links are independent of the five video sites: a tool update does not pause them, and a server that answers *"too many requests"* only makes that one download wait.
+
+### Download from your browser, like IDM
+
+With the **SwiftSaveLite1 extension** in your browser, clicking a download link is enough: the browser starts its download, the extension pauses it and hands it to SwiftSaveLite1, and once the app has it the browser's copy is cancelled and removed from its download list. The app downloads it with up to 16 connections like any file link — with the browser's **cookies for that site, the page it came from and the browser's user agent**, so downloads that need you to be signed in (a mail attachment, a cloud drive, a members' area) work as well.
+
+**Set up (once per browser):** ⚙ Settings → **Browser integration** (on by default) → **Set up…**. The window shows each browser (installed, ready, last used), the extension folders and these steps:
+
+| Browser | Steps |
+|---|---|
+| **Chrome, Edge, Brave** | 1. Click **Open extensions page**. 2. Switch on **Developer mode** and leave it on (without it the browser switches the extension off at its next start). 3. **Load unpacked** → choose the `browser\chromium` folder next to `SwiftSaveLite1.exe` (copy its path in the set-up window). 4. Pin the orange SwiftSaveLite1 icon from the puzzle-piece menu. |
+| **Firefox** | 1. Click **Open extensions page** (`about:debugging` → *This Firefox*). 2. **Load Temporary Add-on…** → choose `manifest.json` in the `browser\firefox` folder. 3. Firefox forgets temporary add-ons when it closes: load it again after a restart (a signed version will follow). |
+
+**Using it**
+
+- **Click a download link** — it goes to SwiftSaveLite1 and starts right away. The toolbar icon shows **✓** for a moment; the app's status bar says *"Browser: queued setup-2.0.exe (12 MB)"*.
+- **Right-click** a link, a video or a page → **Download with SwiftSaveLite1**. Links of the five video sites become video downloads (MP4 / MP3 as set in the app), every other link a file download.
+- **The tiny icon on videos** — an 18 × 18 px orange square in the top-right corner of a video, only while the pointer is over the video; it fades out 0.6 s after the pointer leaves. No text, no panel, nothing on the page moves. Click it: on YouTube, Facebook, TikTok, X and Instagram the video's page or post is queued (a video playing inside a playlist downloads just that video); on other sites a plain video file is downloaded itself. Streamed videos on other sites (no file address) get no icon, and neither do full-screen videos or YouTube's hover previews. The icon turns into **✓** when the app has the video. Right-click the toolbar icon → *Download icon on videos* switches it off.
+- <kbd>Alt</kbd>+click a link — that download stays in the browser.
+- **Click the toolbar icon** to stop / start catching downloads in that browser (the icon then shows *off*).
+- **App not running?** The click starts SwiftSaveLite1 hidden in the tray (a notification says so) and the download begins.
+- **Left to the browser** — when the app gets a web page or an error for the link, cannot reach the server, is still setting up on its very first start, or *Browser integration* is off, it answers "leave" and the browser simply continues its own download (the toolbar icon shows **!** with the reason). `blob:` and `data:` downloads, downloads from private windows and downloads the browser already has in full (e.g. from its cache) always stay in the browser.
+- **The same link again** — while it downloads or when its file is still there the app says *"already in the list"* / *"already downloaded"*; a failed or cancelled one starts again with the fresh sign-in.
+
+The extension talks only to SwiftSaveLite1 on this PC (through `SwiftSaveBridge.exe`, see [Privacy](#privacy-and-network-access)). **Using IDM too?** Both extensions would try to take the same download — the set-up window warns about every browser where IDM's extension is registered; switch one of them off in that browser.
+
+<p align="center"><img src="docs/screenshots/phase15-icon-hover.png" alt="The tiny SwiftSaveLite1 icon in the top-right corner of a video while the pointer is over it" width="546" /></p>
 
 ### The download list
 
@@ -268,7 +341,9 @@ Click **⚙** at the right end of the status bar.
 | Resume downloads at startup | **On** | At app start every queued and paused download runs again. Off: nothing starts by itself — they wait as Paused until **Resume** / **Resume all** |
 | Delete automatically from download list | **On**, keep **5** | Keep only the N most recent finished downloads in the list (0–9999); files are never deleted |
 | Simultaneous downloads | **1** | How many downloads the queue runs at the same time (1–5); applies immediately, also to running downloads |
-| Connections per file | **8** | Parallel connections for one direct file download (1–16), like IDM; used by file downloads that start after the change |
+| YouTube connections | **4** | Pieces of a YouTube video downloaded at once (1–8). YouTube sends its videos in small pieces; fetching several at once fills the line (measured: 8.4 MB/s one at a time, 9.45 MB/s with 4). Kept low because YouTube answers many parallel requests from one address with throttling or bot checks; used by downloads that start after the change |
+| Other connections | **16** | Parallel connections for one direct file download (1–16), like IDM, and pieces fetched at once for Facebook, TikTok, X and Instagram videos; used by downloads that start after the change |
+| Browser integration | **On** | The browser extension may hand over downloads, links and videos (Chrome, Edge, Brave, Firefox). **Set up…** shows each browser's state and the steps to add the extension. Off removes this copy's browser registration; the extension then leaves everything to the browser |
 | Sign-in cookies | not set | Shows which sites `cookies.txt` has cookies for; **Set up…** opens the step-by-step guide with **Choose cookies file…** |
 
 Changes are saved immediately to `settings.xml`.
@@ -299,13 +374,14 @@ On Windows 11 new tray icons appear under the **^** (show hidden icons) arrow; d
 | A video is queued | YouTube: the title comes from YouTube's oEmbed service, the length from yt-dlp metadata and the thumbnail from `i.ytimg.com`. Other sites: title, length and thumbnail come from yt-dlp metadata; the thumbnail shows a small site badge (and the site icon until the image has loaded). |
 | A download finishes | The file is checked with ffmpeg; anything that is not H.264 + AAC in MP4 (or MP3 for audio items) is converted. Older finished items are trimmed from the list (auto-clean). |
 | A duplicate link arrives | It is ignored with a status message for a few seconds: *already in the list* (same video in the same format, or the same file link) or *already downloaded* (an MP4 / MP3 with that video id, or a file with the same name and size, is in the download folder). |
-| A file link is added | The server is asked for the first byte: name, size and type are shown at once; a web page is refused. The download then runs over up to 8 connections (Settings) and saves its progress every 2 seconds. |
+| A file link is added | The server is asked for the first byte: name, size and type are shown at once; a web page is refused. The download then runs over up to 16 connections (*Other connections*) and saves its progress every 2 seconds. |
 | A playlist is copied again | Only its missing videos are queued, in playlist order: videos already queued, downloading, paused or finished in the list, or already in the download folder, are skipped; failed or cancelled ones are queued again. The status bar says *"Queued 12 videos (playlist has 20) · skipped …"* or *"Playlist up to date — …"*. |
 | A site limits your network (bot check, HTTP 429) | Only that site waits — downloads from the other sites keep going. YouTube: an immediate second attempt with more YouTube player clients, then automatic retries after 2 → 5 → 10 → 20 → 30 → 60 minutes (HTTP 403: 30 s → 2 → 5 min), with a countdown in the list. |
 | Network error | Retries after 30 s → 2 min → 5 min. |
 | ≈ 15 s after start, then every 12 h | Checks for newer yt-dlp / ffmpeg / deno (at most every 6 h). A newer tool is downloaded, running video downloads are paused, the file is swapped (rolled back on failure) and downloads resume — no dialogs. File downloads keep running. |
 | The app is closed or crashes mid-download | The partial file is kept and the item is saved as Paused; it continues on the next start when **Resume downloads at startup** is on. File links continue from the saved ranges (at most the last 2 seconds are fetched again). |
-| Every start | The Windows start-up entry is made to match **Start with Windows** — also after the portable folder was moved. |
+| Every start | The Windows start-up entry is made to match **Start with Windows**, and the browsers' native-messaging registration (`com.swiftsavelite1.bridge` for Chrome, Edge, Brave and Firefox, per user) to match **Browser integration** — also after the portable folder was moved. |
+| A download link is clicked in the browser | The extension pauses the browser's download, the app checks the link with the browser's cookies and takes it (the browser's copy is cancelled) or leaves it to the browser. A closed app is started hidden in the tray first. |
 | You sign in to Windows | With **Start with Windows** on the app starts hidden in the tray. |
 | The exe is started again from the same folder | The running window comes to the front (also from the tray). |
 | Windows shuts down or you sign out | The list is saved and the app exits cleanly. |
@@ -346,19 +422,30 @@ For lasting blocks, **age-restricted** or **members-only** videos, let yt-dlp us
 SwiftSaveLite1\
 ├─ SwiftSaveLite1.exe                 the app
 ├─ SwiftSaveLite1.exe.config
+├─ SwiftSaveBridge.exe                the browsers start it for the extension's messages (native messaging)
+├─ SwiftSaveBridge.exe.config
 ├─ MaterialDesignThemes.Wpf.dll       UI library
 ├─ MaterialDesignColors.dll
 ├─ Microsoft.Xaml.Behaviors.dll
 ├─ settings.xml                       your settings (created on first start)
 ├─ downloads.xml                      the download list with each item's status
 ├─ cookies.txt                        optional, see above
+├─ uninstall.exe                      the uninstaller (setup installs only)
+├─ setup-state.xml                    what the setup added: program files, shortcuts, store registrations (setup installs only)
+├─ browser\
+│  ├─ chromium\                       the extension for Chrome, Edge and Brave (Load unpacked)
+│  ├─ firefox\                        the extension for Firefox (manifest.json → Load Temporary Add-on)
+│  └─ host.chromium.json  host.firefox.json   native-messaging host manifests (written at start)
 ├─ tools\
 │  ├─ yt-dlp.exe  ffmpeg.exe  deno.exe
 │  ├─ versions.xml                    installed tool versions
 │  └─ cache\                          yt-dlp cache
 └─ logs\
-   └─ app.log                         diagnostics; rolls over to app.1.log at 1 MB
+   ├─ app.log                         diagnostics; rolls over to app.1.log at 1 MB
+   └─ bridge.log                      one line per browser message (type, answer, time; never links or cookies)
 ```
+
+Outside the folder (per user, no admin rights): with the setup, the Start-menu (and desktop) shortcut and the entry `HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\SwiftSaveLite1` (Settings → Apps); the optional *Start with Windows* entry and, with **Browser integration** on, the key `com.swiftsavelite1.bridge` under `HKCU\Software\Google\Chrome\NativeMessagingHosts`, `…\Microsoft\Edge\…`, `…\BraveSoftware\Brave-Browser\…` and `HKCU\Software\Mozilla\NativeMessagingHosts`, pointing at the host manifests above.
 
 All state files are written atomically (temporary file, then replace), so a crash never leaves a half-written `settings.xml` or `downloads.xml`.
 
@@ -386,7 +473,12 @@ Usually changed through **⚙ Settings**. To edit it by hand, exit the app first
   <SmartClipboardFingerprint>…</SmartClipboardFingerprint> <!-- hash of the links Smart Download last queued; written by the app -->
   <StartWithWindows>true</StartWithWindows>             <!-- HKCU\…\CurrentVersion\Run entry "SwiftSaveLite1" -->
   <AutoResumeDownloads>true</AutoResumeDownloads>
-  <ConnectionsPerDownload>8</ConnectionsPerDownload>    <!-- 1..16, file links -->
+  <ConnectionsPerDownload>16</ConnectionsPerDownload>   <!-- "Other connections" 1..16: file links + Facebook / TikTok / X / Instagram pieces -->
+  <BrowserIntegration>true</BrowserIntegration>         <!-- native-messaging registration for the browser extension -->
+  <BrowsersSeen>                                        <!-- written by the app: browsers the extension was used in -->
+    <Browser><Name>Edge</Name><Version>155.0.4283.62</Version><LastUtc>2026-10-23T10:27:02Z</LastUtc></Browser>
+  </BrowsersSeen>
+  <YouTubeConnections>4</YouTubeConnections>            <!-- "YouTube connections" 1..8: pieces of a YouTube video fetched at once -->
 </Settings>
 ```
 
@@ -406,11 +498,25 @@ SwiftSaveLite1 has **no telemetry, no accounts and no ads**. It connects only to
 | `github.com`, `api.github.com` | yt-dlp and deno downloads and version checks |
 | `www.gyan.dev` | ffmpeg download and version check (fallback: `github.com/yt-dlp/FFmpeg-Builds`) |
 | `www.facebook.com` | Only when you click the contact link |
-| The server of a file link | Only for file links you add (or copy, with Smart Download on, when they look like a file): one request for the first byte, then the download |
+| The server of a file link | Only for file links you add (or copy, with Smart Download on, when they look like a file, or hand over from the browser): one request for the first byte, then the download |
 
 With Smart Download on, the app reads text copied to the clipboard to look for supported video links and file links. Nothing leaves your computer except the resulting requests to those sites.
 
+**Browser extension.** For a download, a right-clicked link or a video it sends SwiftSaveLite1 the link, the address the browser was redirected to, the page it came from, the browser's file name and user agent, and the browser's cookies **for that link's site only** — through the browser's native messaging to `SwiftSaveBridge.exe` and a named pipe that only your Windows account on this PC can open (network access to it is denied). Nothing goes to any other computer: the app uses the cookies only for requests to the hosts they belong to (a redirect to another host gets none). They stay in memory and, encrypted for your Windows account (DPAPI), in the download's `.part.xml` until the file is finished; they are never written to `downloads.xml`, `settings.xml` or the logs. Only the SwiftSaveLite1 extension (fixed ids) may start the bridge.
+
 ## Troubleshooting / FAQ
+
+<details>
+<summary><b>The setup did not add the extension to my browser</b></summary>
+
+Browsers on Windows take an extension from an installer only through their store (Chrome Web Store for Chrome / Edge / Brave, a Mozilla-signed package for Firefox). Until SwiftSaveLite1 is listed, add it once with the steps on the setup's last page or in ⚙ Settings → Browser integration → *Set up…*. With a listing, the browser asks once (*"New extension added"* → **Enable**).
+</details>
+
+<details>
+<summary><b>Can I install into C:\Program Files?</b></summary>
+
+No: the app keeps its settings, list and tools next to the exe and updates yt-dlp / ffmpeg / deno there, which Program Files does not allow without admin rights. The default `%LOCALAPPDATA%\Programs\SwiftSaveLite1` is where per-user programs live.
+</details>
 
 <details>
 <summary><b>The status bar says the tools could not be downloaded</b></summary>
@@ -467,6 +573,24 @@ The link leads to a page (for example a download page with a button), not to the
 </details>
 
 <details>
+<summary><b>I clicked a download link but the browser downloaded it itself</b></summary>
+
+Look at the SwiftSaveLite1 toolbar icon: **off** means catching is switched off in this browser (click the icon); **!** shows the reason in its tool tip — e.g. *"not set up for this browser"* (⚙ Settings → Browser integration must be on, and the extension loaded as described in **Set up…**), a web page or an error the app got for that link, or the app still setting up on its very first start. <kbd>Alt</kbd>+click, private windows, `blob:` downloads and files the browser already had in full (from its cache) always stay in the browser. In Chrome, Edge and Brave **Developer mode** must stay on, or the browser switches the unpacked extension off at its next start. With IDM's extension in the same browser, IDM may take the download first.
+</details>
+
+<details>
+<summary><b>Can I use IDM and SwiftSaveLite1 together?</b></summary>
+
+Yes, but not both extensions in the same browser: both would try to take every download. Switch one of them off on the browser's extensions page — the set-up window (⚙ Settings → Browser integration → Set up…) shows in which browsers IDM is registered.
+</details>
+
+<details>
+<summary><b>Firefox forgot the SwiftSaveLite1 add-on</b></summary>
+
+An add-on loaded with *Load Temporary Add-on* lasts until Firefox closes. Load `browser\firefox\manifest.json` again after a restart; a signed version that stays installed will follow.
+</details>
+
+<details>
 <summary><b>A file downloads with only 1 connection</b></summary>
 
 The server does not support byte ranges (it always sends the whole file), so the file cannot be split — the log says *"1 connection (no range support)"*. Small files use fewer connections: each range is at least 1 MB, so a 3 MB file uses 3. Check ⚙ Settings → *Connections per file*.
@@ -475,7 +599,9 @@ The server does not support byte ranges (it always sends the whole file), so the
 <details>
 <summary><b>More connections are not faster</b></summary>
 
-Several connections help when a server limits the speed of each connection. When one connection already fills your internet line, more connections cannot add speed. Some servers allow only one or two connections per user — the app then continues with fewer; lower *Connections per file* if a site keeps answering "too many requests".
+Several connections help when a server limits the speed of each connection. When one connection already fills your internet line, more connections cannot add speed. Some servers allow only one or two connections per user — the app then continues with fewer; lower *Other connections* (files and Facebook / TikTok / X / Instagram) or *YouTube connections* if a site keeps answering "too many requests".
+
+YouTube downloads show *"· 4 connections"* while YouTube sends the video in pieces (most videos); a video that comes as one plain file is fetched over one connection.
 </details>
 
 <details>
@@ -524,6 +650,9 @@ The exe is not code-signed and `yt-dlp.exe` is sometimes flagged generically. Al
 
 | Version | Highlights |
 |---|---|
+| **0.9.0** | **Faster video downloads**: YouTube, Facebook, TikTok, X and Instagram videos fetch several pieces at once, so one download fills the line (YouTube measured 8.4 → 9.45 MB/s on a ≈ 75 Mbit/s line); two settings — **YouTube connections** (default 4, 1–8, kept safe for YouTube) and **Other connections** (default 16 = full speed, 1–16, also file links; the old default 8 is raised to 16 once); the detail line shows the connection count for videos too |
+| **0.8.0** | **Setup and uninstaller**: `SwiftSaveSetup-0.8.0.exe` installs for the current user without admin rights (`%LOCALAPPDATA%\Programs\SwiftSaveLite1`, Start-menu / desktop shortcut, Settings → Apps entry, browser connection) and updates in place (a running app is closed with its downloads saved and continues after the update); the last page shows the one step left per browser (store listing → *Enable*, otherwise Load unpacked); **Internet Download Manager** and its extension are detected, with buttons for IDM's own uninstaller and the browsers' extension pages; **Uninstall** from Settings → Apps removes everything of SwiftSaveLite1 (program, tools, settings, list, logs, start-up entry, browser connection, shortcuts) and keeps your downloads; store packages for the Chrome Web Store and addons.mozilla.org |
+| **0.7.0** | **Browser integration, like IDM**: the SwiftSaveLite1 extension for Chrome, Edge, Brave and Firefox hands downloads you start in the browser to the app — with the browser's cookies, referer and user agent, so signed-in downloads work — and cancels the browser's copy once the app has it (anything the app cannot get stays with the browser); *Download with SwiftSaveLite1* on links, videos and pages; a tiny hover-only download icon on videos; Alt+click and a per-browser toolbar switch keep downloads in the browser; a click while the app is closed starts it hidden in the tray; ⚙ Settings → *Browser integration* with a set-up window (per-browser state, IDM warning, Load-unpacked steps); `SwiftSaveBridge.exe` and the `browser\` folder in the zip |
 | **0.6.0** | **Any direct file link, like IDM**: every other http(s) / `www.` link is downloaded by the app itself with up to 16 parallel connections (default 8, ⚙ Settings → *Connections per file*), work stealing between connections, resumable after pause, errors, exit and reboot (`.part` + `.part.xml`), one connection for servers without range support; web-page links refused with a message; name and size shown at once; file-type icons, type badge, connection count and a segment strip in the list; Smart Download picks up copied links that look like a file; file-specific *How to fix this*; Mark of the Web on finished files |
 | **0.5.0** | **Playlist top-up**: a copied link of a video inside a playlist queues the whole playlist, and copying it again later adds only what is missing (skips videos already queued, finished or in the download folder; YouTube Mix stays one video); **Start with Windows** (default on, hidden in the tray); **Resume downloads at startup** (default on) — a download cut off by closing the app is kept as Paused |
 | **0.4.1** | Click the status icon of a failed (or retry-waiting) download for **How to fix this** — detailed steps per error, Retry, Copy details; guided **cookies.txt** set-up with exporter links, file check and format fix (**Choose cookies file…**) and per-site coverage; ⚙ Settings → Sign-in cookies; TikTok region blocks reported separately from sign-in |
@@ -532,6 +661,8 @@ The exe is not code-signed and `yt-dlp.exe` is sometimes flagged generically. Al
 | **0.2.1** | Close to system tray (default on) with a **Restore** / **Exit** tray menu; tray tooltip with queue counts; a second start restores the hidden window |
 | **0.2.0** | Ctrl+V anywhere and multi-link paste; optional paste box; settings dialog (folder, Smart Download on by default, show paste box, auto-clean keeping the last N); thumbnails with video length; double-click actions; up to 5 downloads started at once; pause all / resume all / remove all; Shift/Ctrl multi-select; duplicate and already-downloaded detection; About window; contact link; tool download speed and ETA; **YouTube bot-check fix** (embedded player client, fallbacks, HTTP 403 handling) |
 | **0.1.0** | First release: link parser and FIFO queue; yt-dlp runner with progress, pause/resume and MP4 conversion; compact grey/orange UI with context menu; Smart Download; silent tool updates; XML persistence; single instance; file-name sanitising; portable package |
+
+The project was built in phases — a plan, then phases 0–17 — each ending with a build, tests, recorded evidence and a git tag (`plan`, `phase-0` … `phase-17`, `v0.1.0`, `v0.2.0`, `v0.2.1`, `v0.4.0`, `v0.4.1`, `v0.5.0`, `v0.6.0`). [PROGRESS.md](PROGRESS.md) holds the evidence and the decision log.
 
 ## Third-party software
 
@@ -545,7 +676,7 @@ The exe is not code-signed and `yt-dlp.exe` is sometimes flagged generically. Al
 | [Simple Icons](https://simpleicons.org) | Facebook, TikTok, X and Instagram glyphs (`Styles/SiteIcons.xaml`) | CC0-1.0 (brand marks belong to their owners) |
 | [Material Design Icons](https://pictogrammers.com/library/mdi/) | The download glyph of the file badge (`Styles/SiteIcons.xaml`; the same icon set as the app's PackIcons) | Apache 2.0 |
 
-The tools are not included in the zip; the app downloads them from their official release locations.
+The tools are not included in this repository or the zip; the app downloads them from their official release locations.
 
 ## Disclaimer
 
@@ -557,7 +688,7 @@ SwiftSaveLite1 is meant for downloading videos and files you are allowed to down
 
 - Facebook: [facebook.com/rubel.social](https://www.facebook.com/rubel.social/)
 - Phone: +8801760002332
-- Downloads: [rubeldbc/SwiftSaveLite1-Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases)
+- GitHub: [rubeldbc/SwiftSaveLite1](https://github.com/rubeldbc/SwiftSaveLite1)
 
 ---
 
