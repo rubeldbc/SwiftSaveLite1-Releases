@@ -13,11 +13,12 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveSetup-0.9.0.exe"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveSetup--0.9.0.exe-FF7A1A?style=for-the-badge" /></a>
+  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveSetup-0.9.1.exe"><img alt="Download" src="https://img.shields.io/badge/Download-SwiftSaveSetup--0.9.1.exe-FF7A1A?style=for-the-badge" /></a>
+  <a href="https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.9.1-win-x64-portable.zip"><img alt="Download the full portable zip" src="https://img.shields.io/badge/Full%20portable-SwiftSaveLite1--0.9.1--win--x64--portable.zip-2D2D2D?style=for-the-badge" /></a>
 </p>
 
 <p align="center">
-  <img alt="version" src="https://img.shields.io/badge/version-0.9.0-FF7A1A" />
+  <img alt="version" src="https://img.shields.io/badge/version-0.9.1-FF7A1A" />
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-2D2D2D" />
   <img alt="runtime" src="https://img.shields.io/badge/.NET%20Framework-4.8-512BD4" />
   <img alt="ui" src="https://img.shields.io/badge/UI-WPF%20%2B%20MaterialDesignInXaml%205.3.2-2D2D2D" />
@@ -86,7 +87,7 @@
 - **Close to tray** — the window's close button keeps the app running in the notification area (Restore / Exit menu).
 - **Starts with Windows** — quietly in the tray when you sign in (Settings, on by default).
 - **Picks up where it left off** — a download cut off by closing the app is kept as Paused; queued and paused downloads continue at the next start (Settings, on by default).
-- **Portable and small** — no installer, no admin rights; the app is 10 MB (3 MB zipped) and keeps all its state in its own folder. The only thing outside it is the optional per-user *Start with Windows* entry.
+- **Portable and small** — no installer, no admin rights; the app is 10 MB (3 MB zipped) and keeps all its state in its own folder. The **full portable zip** (≈ 100 MB) brings yt-dlp, ffmpeg and deno along: extract it and start downloading, no first-start download. The only thing outside it is the optional per-user *Start with Windows* entry.
 - **Compact dark UI** — grey and orange, square corners everywhere, Material Design icons.
 - **Safe file names** — characters Windows does not allow in file names are replaced automatically; titles in any language are kept.
 
@@ -122,7 +123,7 @@
 
 ### Setup (recommended)
 
-1. Download **[`SwiftSaveSetup-0.9.0.exe`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveSetup-0.9.0.exe)** (3.4 MB) — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
+1. Download **[`SwiftSaveSetup-0.9.1.exe`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveSetup-0.9.1.exe)** (3.4 MB) — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
 2. Run it. It installs **for you only, without admin rights**, into `%LOCALAPPDATA%\Programs\SwiftSaveLite1` (changeable; Program Files is refused because the app updates its tools in its own folder).
 3. Options: **Desktop shortcut** (on), **Start SwiftSaveLite1 when done** (on). The page also lists the browsers found on the PC and, when it is there, **Internet Download Manager** (see below).
 4. **Install** takes a few seconds: program files, `uninstall.exe`, a Start-menu shortcut, an entry in **Settings → Apps** and the browser connection for Chrome, Edge, Brave and Firefox.
@@ -134,11 +135,20 @@
 
 **Update:** run the newer setup. A running SwiftSaveLite1 is asked to close first (running downloads are saved and continue after the update), program files are replaced, and `settings.xml`, `downloads.xml`, `cookies.txt`, `tools\` and `logs\` stay. A folder holding a portable copy is updated in place the same way.
 
-**Without a window:** `SwiftSaveSetup-0.9.0.exe --silent [--dir "D:\Apps\SwiftSaveLite1"] [--no-desktop] [--start]` (exit code 0 = installed). Every setup run is logged to `%TEMP%\SwiftSaveSetup.log`.
+**Without a window:** `SwiftSaveSetup-0.9.1.exe --silent [--dir "D:\Apps\SwiftSaveLite1"] [--no-desktop] [--start]` (exit code 0 = installed). Every setup run is logged to `%TEMP%\SwiftSaveSetup.log`.
 
 ### Portable zip
 
-1. Download **[`SwiftSaveLite1-0.9.0-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.9.0-win-x64.zip)** — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
+Two portable versions, both on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page:
+
+| Zip | Size | First start |
+|---|---|---|
+| **[`SwiftSaveLite1-0.9.1-win-x64-portable.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.9.1-win-x64-portable.zip)** — full portable | ≈ 100 MB (≈ 230 MB unpacked) | **Ready at once, also offline**: `yt-dlp.exe`, `ffmpeg.exe` and `deno.exe` are already in `tools\` (their licenses in `tools\licenses\`). |
+| [`SwiftSaveLite1-0.9.1-win-x64.zip`](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases/latest/download/SwiftSaveLite1-0.9.1-win-x64.zip) | 3.2 MB | Downloads the three tools (≈ 220 MB, 2–3 minutes). |
+
+Both run straight from the folder: no install, no admin rights. The only runtime they need, .NET Framework 4.8, is part of Windows 11 and Windows 10 (version 1903 and later).
+
+1. Download one of the zips above — or pick any version on the [Releases](https://github.com/rubeldbc/SwiftSaveLite1-Releases/releases) page.
 2. Unzip it into a folder you can write to, e.g. `D:\Apps\SwiftSaveLite1` (not `C:\Program Files`).
 3. Run **`SwiftSaveLite1.exe`**.
 
@@ -167,7 +177,7 @@ The setup itself changes nothing of IDM — you decide, and the install works ei
 
 ## Quick start
 
-1. Start `SwiftSaveLite1.exe`. On the first start the status bar shows the tools being downloaded, e.g. *"Downloading ffmpeg… 42 % · 3.2 MB/s · ETA 00:31"* (about 2–3 minutes).
+1. Start `SwiftSaveLite1.exe`. With the full portable zip the tools are already there and the app is ready at once. Otherwise, on the first start the status bar shows the tools being downloaded, e.g. *"Downloading ffmpeg… 42 % · 3.2 MB/s · ETA 00:31"* (about 2–3 minutes).
 2. Copy a YouTube, Facebook, TikTok, X or Instagram link — or the link of any file (zip, exe, iso, pdf …) — in your browser or app.
 3. With Smart Download on (default) it is queued at once — even while the tools are still downloading on the first start, and also a link you copied before starting the app. Otherwise click the SwiftSaveLite1 window and press <kbd>Ctrl</kbd>+<kbd>V</kbd>.
 4. The finished MP4 (or MP3 in audio mode, or the file as it is) is in `%USERPROFILE%\Downloads\SwiftSaveLite1`. Double-click the item to open it.
@@ -650,6 +660,7 @@ The exe is not code-signed and `yt-dlp.exe` is sometimes flagged generically. Al
 
 | Version | Highlights |
 |---|---|
+| **0.9.1** | **Full portable zip**: `SwiftSaveLite1-0.9.1-win-x64-portable.zip` (≈ 100 MB) carries yt-dlp, ffmpeg and deno in `tools\` with their licenses — extract it and start downloading at once, also without internet on the first start (only .NET Framework 4.8 comes from Windows). The tools are the official releases, checked against their publishers' SHA-256 when the zip is built; the app keeps them up to date as before. The app itself is unchanged from 0.9.0. |
 | **0.9.0** | **Faster video downloads**: YouTube, Facebook, TikTok, X and Instagram videos fetch several pieces at once, so one download fills the line (YouTube measured 8.4 → 9.45 MB/s on a ≈ 75 Mbit/s line); two settings — **YouTube connections** (default 4, 1–8, kept safe for YouTube) and **Other connections** (default 16 = full speed, 1–16, also file links; the old default 8 is raised to 16 once); the detail line shows the connection count for videos too |
 | **0.8.0** | **Setup and uninstaller**: `SwiftSaveSetup-0.8.0.exe` installs for the current user without admin rights (`%LOCALAPPDATA%\Programs\SwiftSaveLite1`, Start-menu / desktop shortcut, Settings → Apps entry, browser connection) and updates in place (a running app is closed with its downloads saved and continues after the update); the last page shows the one step left per browser (store listing → *Enable*, otherwise Load unpacked); **Internet Download Manager** and its extension are detected, with buttons for IDM's own uninstaller and the browsers' extension pages; **Uninstall** from Settings → Apps removes everything of SwiftSaveLite1 (program, tools, settings, list, logs, start-up entry, browser connection, shortcuts) and keeps your downloads; store packages for the Chrome Web Store and addons.mozilla.org |
 | **0.7.0** | **Browser integration, like IDM**: the SwiftSaveLite1 extension for Chrome, Edge, Brave and Firefox hands downloads you start in the browser to the app — with the browser's cookies, referer and user agent, so signed-in downloads work — and cancels the browser's copy once the app has it (anything the app cannot get stays with the browser); *Download with SwiftSaveLite1* on links, videos and pages; a tiny hover-only download icon on videos; Alt+click and a per-browser toolbar switch keep downloads in the browser; a click while the app is closed starts it hidden in the tray; ⚙ Settings → *Browser integration* with a set-up window (per-browser state, IDM warning, Load-unpacked steps); `SwiftSaveBridge.exe` and the `browser\` folder in the zip |
@@ -676,7 +687,7 @@ The project was built in phases — a plan, then phases 0–17 — each ending w
 | [Simple Icons](https://simpleicons.org) | Facebook, TikTok, X and Instagram glyphs (`Styles/SiteIcons.xaml`) | CC0-1.0 (brand marks belong to their owners) |
 | [Material Design Icons](https://pictogrammers.com/library/mdi/) | The download glyph of the file badge (`Styles/SiteIcons.xaml`; the same icon set as the app's PackIcons) | Apache 2.0 |
 
-The tools are not included in this repository or the zip; the app downloads them from their official release locations.
+The tools are not included in the small zip or the setup; the app downloads them from their official release locations. The full portable zip ships the unmodified official binaries with their license texts in `tools\licenses\` (FFmpeg's `README.txt` from the gyan.dev build names the exact source and configuration).
 
 ## Disclaimer
 
